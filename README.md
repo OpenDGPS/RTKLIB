@@ -15,6 +15,7 @@ The drawback is the additional time to get the the content of the memory into th
 ###TODO
 
 - [ ] Describe how to map the "rtk_t *rtk" (with a variable length) to a fix memory range? 
+- - [ ] How to inform the FPGA to use only the valid data?
 - [ ] Profiling of str2str.c
 - [ ] Decision about FP encoding
 

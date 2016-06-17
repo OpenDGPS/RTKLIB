@@ -2,7 +2,7 @@
 
 A optimzed Version of the RTKLIB by reaplcement of some/most time consuming calculations with VHDL logic for the PL of a Xilinx Zynq 7020. 
 
-All core position calculations are in src/rtkpos.c. The most interesting starting point to optimize is obviously udbias(). Based on the findings at [rtklibexplorer](https://rtklibexplorer.wordpress.com/2016/03/13/improving-rtklib-solution-phase-bias-sum-error/) there is a lot of room for improvements.   
+All core position calculations are in src/rtkpos.c. The most interesting starting point to optimize is obviously udbias(). Based on the findings at [rtklibexplorer](https://rtklibexplorer.wordpress.com/2016/03/13/improving-rtklib-solution-phase-bias-sum-error/) there is a lot of room for improvements. (@rtklibexplorer also have some demos to a basic understanding of the famous RTKLIB)   
 
 In udbias() you will find nested for loops with different calculations and checks. In every loop sdobs() (single-differenced observable) will called six times. Also the macro SQR (defined as x * y) will be called.
 
@@ -14,8 +14,12 @@ The drawback is the additional time to get the the content of the memory into th
 
 ###TODO
 
-How to map the "rtk_t *rtk" (with a variable length) to a fix memory range? 
+- [ ] Describe how to map the "rtk_t *rtk" (with a variable length) to a fix memory range? 
+- [ ] Profiling of str2str.c
+- [ ] Decision about FP encoding
 
+
+###ORIGINAL DOCUMENTATION
 
 The original readme is [here](readme.txt).
 
